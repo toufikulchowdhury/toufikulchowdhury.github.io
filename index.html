@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Toufikul Chowdhury</title>
-  <meta name="description" content="Toufikul Chowdhury. MSc Data Science, University of Greenwich. Research on spatial inequality in healthcare access in England.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
@@ -63,8 +62,7 @@
     .container { max-width: 930px; margin: 0 auto; padding: 48px 20px 60px; }
 
     /* About */
-    h1.title { font-size: 42px; font-weight: 300; margin: 0 0 4px; line-height: 1.2; }
-    .desc { margin: 0 0 20px; }
+    h1.title { font-size: 42px; font-weight: 300; margin: 0 0 20px; line-height: 1.2; }
     .about { display: grid; grid-template-columns: minmax(0,1fr) 260px; gap: 36px; align-items: start; }
     .profile {
       width: 100%; margin-top: 6px;
@@ -145,21 +143,19 @@
   <section id="about" class="about">
     <div class="about-main">
       <h1 class="title"><b>Toufikul</b> Chowdhury</h1>
-      <p class="desc"><a href="https://www.gre.ac.uk" target="_blank" rel="noopener">MSc Data Science, University of Greenwich</a>. Prospective PhD applicant in Statistics. London, United Kingdom.</p>
       <p>
         I am a data science graduate researching <b>spatial inequality in healthcare access</b>
-        in England. My current research links NHS maternity data at LSOA, Sub-ICB and ICB level
-        with deprivation and travel time measures to study late antenatal booking and unequal access to care.
+        across England. My current work links NHS maternity data at LSOA, Sub-ICB and ICB level
+        with deprivation and travel time to examine late antenatal booking and unequal access to care.
       </p>
       <p>
-        My MSc dissertation modelled NHS England workforce change from 2009 to 2023, with a
-        focus on midwifery and ambulance services. I come from a computer science background
-        and build my own data pipelines in <code>Python</code> and <code>SQL</code>.
+        My MSc dissertation modelled NHS England workforce trends from 2009 to 2023, focusing on
+        midwifery and ambulance services. With a background in computer science, I build my
+        analyses in <code>Python</code>.
       </p>
       <p>
-        I am looking for <b>PhD opportunities in statistics</b>, with interests in
-        spatial statistics, statistical learning, biostatistics, and statistics for
-        public health and policy.
+        I am looking for <b>PhD opportunities in statistics</b>, with particular interest in
+        spatial statistics and statistical machine learning.
       </p>
     </div>
     <div class="profile">
@@ -170,7 +166,7 @@
           toufikul.chowdhury@gmail.com
         </a>
         <a href="https://www.linkedin.com/in/toufikul-chowdhury-26173a234/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.850 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
           LinkedIn
         </a>
       </div>
@@ -221,3 +217,17 @@
       if (dark) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', 'dark');
       try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
     });
+    var links = document.querySelectorAll('.nav-inner a');
+    var ids = ['about', 'research', 'education'];
+    window.addEventListener('scroll', function () {
+      var cur = 'about';
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < 120) cur = id;
+      });
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+    });
+  })();
+</script>
+</body>
+</html>
