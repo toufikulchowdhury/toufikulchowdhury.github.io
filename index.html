@@ -1,233 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Toufikul Chowdhury</title>
+
+  <meta
+    name="description"
+    content="Toufikul Chowdhury — Data Science graduate researching spatial inequalities in healthcare access, with interests in spatial statistics, statistical learning and health data."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
     :root {
       --theme: #1da1f2;
-      --text: #000000;
-      --muted: #555;
+      --text: #111111;
+      --muted: #5c5c5c;
       --bg: #ffffff;
       --line: #dee2e6;
-      --code-bg: #e8f5fe;
     }
+
     [data-theme="dark"] {
-      --theme: #1da1f2;
-      --text: #e8e8e8;
-      --muted: #a8a8a8;
+      --theme: #4db8f7;
+      --text: #eeeeee;
+      --muted: #aaaaaa;
       --bg: #1c1c1d;
       --line: #3a3a3c;
-      --code-bg: #16303f;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
+
     body {
       margin: 0;
       font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-      font-weight: 300;
       font-size: 16px;
-      line-height: 1.6;
+      font-weight: 300;
+      line-height: 1.62;
       color: var(--text);
       background: var(--bg);
       transition: background .2s, color .2s;
     }
-    a { color: var(--theme); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    b, strong { font-weight: 700; }
 
-    /* Navbar */
+    a {
+      color: var(--theme);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    strong,
+    b {
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
     nav {
-      position: sticky; top: 0; z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: var(--bg);
       border-bottom: 1px solid var(--line);
-      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
     }
+
     .nav-inner {
-      max-width: 930px; margin: 0 auto; padding: 12px 20px;
-      display: flex; align-items: center; justify-content: flex-end; gap: 22px;
+      max-width: 930px;
+      margin: 0 auto;
+      padding: 12px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
     }
-    .nav-inner a { color: var(--text); font-size: 17px; font-weight: 400; }
-    .nav-inner a.active, .nav-inner a:hover { color: var(--theme); text-decoration: none; }
+
+    .nav-inner a {
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .nav-inner a.active,
+    .nav-inner a:hover {
+      color: var(--theme);
+      text-decoration: none;
+    }
+
     .toggle {
-      background: none; border: 0; cursor: pointer; color: var(--text);
-      padding: 4px; display: flex;
+      display: flex;
+      padding: 4px;
+      color: var(--text);
+      background: none;
+      border: 0;
+      cursor: pointer;
     }
-    .toggle svg { width: 20px; height: 20px; }
 
-    .container { max-width: 930px; margin: 0 auto; padding: 48px 20px 60px; }
+    .toggle svg {
+      width: 20px;
+      height: 20px;
+    }
 
-    /* About */
-    h1.title { font-size: 42px; font-weight: 300; margin: 0 0 20px; line-height: 1.2; }
-    .about { display: grid; grid-template-columns: minmax(0,1fr) 260px; gap: 36px; align-items: start; }
+
+    /* =========================
+       PAGE
+       ========================= */
+
+    .container {
+      max-width: 930px;
+      margin: 0 auto;
+      padding: 48px 20px 60px;
+    }
+
+
+    /* =========================
+       ABOUT
+       ========================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 38px;
+      align-items: start;
+    }
+
+    h1.title {
+      margin: 0 0 21px;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -.4px;
+    }
+
+    .about p {
+      margin: 0 0 15px;
+    }
+
+
+    /* =========================
+       PROFILE
+       ========================= */
+
     .profile {
-      width: 100%; margin-top: 6px;
+      width: 100%;
+      margin-top: 5px;
     }
+
     .profile img {
-      width: 100%; display: block; border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.18);
-      aspect-ratio: 4 / 5; object-fit: cover; object-position: top;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
     }
+
     .more-info {
       margin-top: 14px;
-      font-family: "Roboto Mono", monospace; font-size: 12px; line-height: 2;
-    }
-    .more-info a { color: var(--text); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-    .more-info a:hover { color: var(--theme); text-decoration: none; }
-    .more-info svg { width: 15px; height: 15px; flex: none; color: var(--theme); }
-    .about p { margin: 0 0 14px; }
-    code {
-      font-family: "Roboto Mono", monospace; font-size: 85%;
-      color: var(--theme); background: var(--code-bg);
-      padding: 1px 5px; border-radius: 3px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 12px;
+      line-height: 2;
     }
 
-    /* Sections */
-    h2 { font-size: 32px; font-weight: 300; margin: 40px 0 14px; }
-    table.news { border-collapse: collapse; width: 100%; }
-    table.news td { padding: 8px 6px; vertical-align: top; }
+    .more-info a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .more-info a:hover {
+      color: var(--theme);
+      text-decoration: none;
+    }
+
+    .more-info svg {
+      width: 15px;
+      height: 15px;
+      flex: none;
+      color: var(--theme);
+    }
+
+
+    /* =========================
+       SECTION HEADINGS
+       ========================= */
+
+    h2 {
+      margin: 42px 0 15px;
+      font-size: 31px;
+      font-weight: 300;
+      line-height: 1.25;
+    }
+
+
+    /* =========================
+       NEWS
+       ========================= */
+
+    table.news {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
     table.news th {
-      text-align: left; font-weight: 700; white-space: nowrap;
-      padding: 8px 20px 8px 6px; vertical-align: top; width: 150px;
+      width: 150px;
+      padding: 8px 20px 8px 6px;
+      text-align: left;
+      vertical-align: top;
+      font-weight: 500;
+      white-space: nowrap;
     }
 
-    .pubs { list-style: none; margin: 0; padding: 0; }
+    table.news td {
+      padding: 8px 6px;
+      vertical-align: top;
+    }
+
+
+    /* =========================
+       RESEARCH
+       ========================= */
+
+    .pubs {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
     .pubs li {
-      display: grid; grid-template-columns: 124px 1fr; gap: 26px;
-      padding: 14px 0; border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 124px minmax(0, 1fr);
+      gap: 26px;
+
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
     }
-    .pubs li:first-child { border-top: 0; }
+
+    .pubs li:first-child {
+      border-top: 0;
+    }
+
     .badge {
-      align-self: start; text-align: center;
-      background: var(--theme); color: #fff; font-size: 12.5px; font-weight: 400;
-      padding: 3px 6px; border-radius: 3px;
+      align-self: start;
+      padding: 3px 7px;
+
+      color: #ffffff;
+      background: var(--theme);
+
+      border-radius: 3px;
+
+      text-align: center;
+      font-size: 12.5px;
+      font-weight: 400;
     }
-    .pub-title { font-weight: 700; }
-    .pub-meta { font-style: italic; color: var(--muted); }
-    .pub-tags { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
-    .pub-tags span {
-      font-size: 12px; border: 1px solid var(--line); border-radius: 3px; padding: 0 7px;
+
+    .pub-title {
+      font-weight: 700;
     }
+
+    .pub-meta {
+      margin-top: 1px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .research-description {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+
+    /* =========================
+       EDUCATION
+       ========================= */
+
+    .education-table th {
+      width: 150px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 640px) {
-      .nav-inner { justify-content: center; gap: 16px; }
-      .nav-inner a { font-size: 15px; }
-      h1.title { font-size: 34px; }
-      .about { grid-template-columns: 1fr; gap: 20px; }
-      .profile { order: -1; width: 70%; margin: 0 auto; }
-      .pubs li { grid-template-columns: 1fr; gap: 6px; }
-      .badge { justify-self: start; }
-      table.news th { width: auto; padding-right: 14px; }
+
+      .nav-inner {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .nav-inner a {
+        font-size: 15px;
+      }
+
+      .container {
+        padding-top: 34px;
+      }
+
+      h1.title {
+        font-size: 34px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .profile {
+        order: -1;
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .pubs li {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .badge {
+        justify-self: start;
+      }
+
+      table.news th {
+        width: auto;
+        padding-right: 14px;
+      }
+
     }
+
   </style>
 </head>
+
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#about" class="active">about</a>
-    <a href="#research">research</a>
-    <a href="#education">education</a>
-    <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
-    </button>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <nav>
+
+    <div class="nav-inner">
+
+      <a href="#about" class="active">about</a>
+      <a href="#research">research</a>
+      <a href="#education">education</a>
+
+      <button
+        class="toggle"
+        id="themeToggle"
+        aria-label="Toggle dark mode"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+          <path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+        </svg>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <div class="container">
+
+
+    <!-- =========================
+         ABOUT
+         ========================= -->
+
+    <section id="about" class="about">
+
+
+      <div class="about-main">
+
+        <h1 class="title">
+          <b>Toufikul</b> Chowdhury
+        </h1>
+
+
+        <p>
+          I am a Data Science graduate researching
+          <b>spatial inequalities in healthcare access</b> across England.
+          My current work examines maternity care using small-area health,
+          demographic and socioeconomic data, with particular attention to
+          geographical accessibility, deprivation and antenatal care.
+        </p>
+
+
+        <p>
+          My MSc research examined NHS England workforce trends from 2009 to
+          2023, focusing on midwifery and ambulance services. My broader
+          research interests lie in statistical modelling, spatial analysis
+          and statistical machine learning applied to health and population
+          data.
+        </p>
+
+
+        <p>
+          I am seeking <b>PhD opportunities in statistics and related
+          quantitative fields</b>, particularly in spatial statistics,
+          spatio-temporal methods and statistical machine learning.
+        </p>
+
+      </div>
+
+
+      <!-- PROFILE -->
+
+      <div class="profile">
+
+        <img
+          src="./portrait.jpg"
+          alt="Toufikul Chowdhury"
+        >
+
+
+        <div class="more-info">
+
+
+          <a href="mailto:toufikul.chowdhury@gmail.com">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+
+            toufikul.chowdhury@gmail.com
+
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/toufikul-chowdhury-26173a234/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+
+            LinkedIn
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWS
+         ========================= -->
+
+    <section>
+
+      <h2>news</h2>
+
+      <table class="news">
+
+        <tr>
+          <th>Current</th>
+          <td>
+            Working on research examining spatial inequalities in access to
+            maternity care in England.
+          </td>
+        </tr>
+
+        <tr>
+          <th>2025</th>
+          <td>
+            Participated in the
+            <a
+              href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CUSP London Data Dive
+            </a>
+            at King's College London, an interdisciplinary urban-data
+            challenge focused on greener cities.
+          </td>
+        </tr>
+
+        <tr>
+          <th>Completed</th>
+          <td>
+            MSc Data Science, University of Greenwich.
+          </td>
+        </tr>
+
+      </table>
+
+    </section>
+
+
+    <!-- =========================
+         RESEARCH
+         ========================= -->
+
+    <section id="research">
+
+      <h2>research</h2>
+
+      <ul class="pubs">
+
+
+        <li>
+
+          <div class="badge">
+            Current research
+          </div>
+
+          <div>
+
+            <div class="pub-title">
+              Spatial inequalities in access to maternity care in England
+            </div>
+
+            <div class="pub-meta">
+              Ongoing research
+            </div>
+
+            <p class="research-description">
+              Examining geographical variation in maternity healthcare
+              accessibility and its relationship with demographic and
+              socioeconomic inequalities across England.
+            </p>
+
+          </div>
+
+        </li>
+
+
+        <li>
+
+          <div class="badge">
+            MSc thesis
+          </div>
+
+          <div>
+
+            <div class="pub-title">
+              NHS England workforce trends and forecasting, 2009–2023
+            </div>
+
+            <div class="pub-meta">
+              MSc Dissertation · University of Greenwich
+            </div>
+
+            <p class="research-description">
+              Analysis of temporal, regional and organisational workforce
+              patterns, with particular focus on midwifery and ambulance
+              services and the modelling of longer-term workforce trends.
+            </p>
+
+          </div>
+
+        </li>
+
+
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+         ========================= -->
+
+    <section id="education">
+
+      <h2>education</h2>
+
+      <table class="news education-table">
+
+        <tr>
+
+          <th>MSc</th>
+
+          <td>
+            <b>Data Science</b>,
+            University of Greenwich
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <th>BSc</th>
+
+          <td>
+            <b>Computer Science and Engineering</b>
+          </td>
+
+        </tr>
+
+      </table>
+
+    </section>
+
+
   </div>
-</nav>
 
-<div class="container">
 
-  <section id="about" class="about">
-    <div class="about-main">
-      <h1 class="title"><b>Toufikul</b> Chowdhury</h1>
-      <p>
-        I am a data science graduate researching <b>spatial inequality in healthcare access</b>
-        across England. My current work links NHS maternity data at LSOA, Sub-ICB and ICB level
-        with deprivation and travel time to examine late antenatal booking and unequal access to care.
-      </p>
-      <p>
-        My MSc dissertation modelled NHS England workforce trends from 2009 to 2023, focusing on
-        midwifery and ambulance services. With a background in computer science, I build my
-        analyses in <code>Python</code>.
-      </p>
-      <p>
-        I am looking for <b>PhD opportunities in statistics</b>, with particular interest in
-        spatial statistics and statistical machine learning.
-      </p>
-    </div>
-    <div class="profile">
-      <img src="./portrait.jpg" alt="Toufikul Chowdhury">
-      <div class="more-info">
-        <a href="mailto:toufikul.chowdhury@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          toufikul.chowdhury@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/toufikul-chowdhury-26173a234/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- =========================
+       SCRIPT
+       ========================= -->
 
-  <h2>news</h2>
-  <table class="news">
-    <tr><th>Current</th><td>Working on a manuscript on spatial inequality in access to maternity care in England.</td></tr>
-    <tr><th>2025</th><td>Took part in the <a href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition" target="_blank" rel="noopener">CUSP London Data Dive</a> at King's College London, an urban data challenge on greener cities.</td></tr>
-    <tr><th>Completed</th><td>MSc Data Science, University of Greenwich, awarded with Merit.</td></tr>
-  </table>
+  <script>
 
-  <h2 id="research">research</h2>
-  <ul class="pubs">
-    <li>
-      <div class="badge">In preparation</div>
-      <div>
-        <div class="pub-title">Spatial inequality in access to maternity care in England</div>
-        <div class="pub-meta">Manuscript in preparation</div>
-        <div class="pub-tags"><span>LSOA</span><span>Sub-ICB</span><span>ICB</span><span>travel time</span><span>deprivation</span><span>antenatal booking</span></div>
-      </div>
-    </li>
-    <li>
-      <div class="badge">MSc thesis</div>
-      <div>
-        <div class="pub-title">NHS England workforce trends and forecasting, 2009 to 2023</div>
-        <div class="pub-meta">MSc Dissertation, University of Greenwich</div>
-        <div class="pub-tags"><span>midwifery</span><span>ambulance services</span></div>
-      </div>
-    </li>
-  </ul>
+    (function () {
 
-  <h2 id="education">education</h2>
-  <table class="news">
-    <tr><th>MSc</th><td><b>Data Science</b>, University of Greenwich. Merit.</td></tr>
-    <tr><th>BSc</th><td><b>Computer Science and Engineering</b>. CGPA 3.30.</td></tr>
-  </table>
+      var root = document.documentElement;
+      var btn = document.getElementById("themeToggle");
 
-</div>
 
-<script>
-  (function () {
-    var root = document.documentElement, btn = document.getElementById('themeToggle');
-    try { if (localStorage.getItem('theme') === 'dark') root.setAttribute('data-theme', 'dark'); } catch (e) {}
-    btn.addEventListener('click', function () {
-      var dark = root.getAttribute('data-theme') === 'dark';
-      if (dark) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', 'dark');
-      try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
-    });
-    var links = document.querySelectorAll('.nav-inner a');
-    var ids = ['about', 'research', 'education'];
-    window.addEventListener('scroll', function () {
-      var cur = 'about';
-      ids.forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top < 120) cur = id;
+      /* DARK MODE */
+
+      try {
+
+        if (localStorage.getItem("theme") === "dark") {
+          root.setAttribute("data-theme", "dark");
+        }
+
+      } catch (e) {}
+
+
+      btn.addEventListener("click", function () {
+
+        var dark =
+          root.getAttribute("data-theme") === "dark";
+
+        if (dark) {
+          root.removeAttribute("data-theme");
+        } else {
+          root.setAttribute("data-theme", "dark");
+        }
+
+        try {
+          localStorage.setItem(
+            "theme",
+            dark ? "light" : "dark"
+          );
+        } catch (e) {}
+
       });
-      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
-    });
-  })();
-</script>
+
+
+      /* ACTIVE NAVIGATION */
+
+      var links =
+        document.querySelectorAll(".nav-inner a");
+
+      var ids =
+        ["about", "research", "education"];
+
+
+      window.addEventListener("scroll", function () {
+
+        var current = "about";
+
+        ids.forEach(function (id) {
+
+          var element =
+            document.getElementById(id);
+
+          if (
+            element &&
+            element.getBoundingClientRect().top < 120
+          ) {
+            current = id;
+          }
+
+        });
+
+
+        links.forEach(function (link) {
+
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+          );
+
+        });
+
+      });
+
+    })();
+
+  </script>
+
+
 </body>
+
 </html>
