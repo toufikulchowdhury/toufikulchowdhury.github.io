@@ -8,13 +8,13 @@
   <title>Toufikul Chowdhury | Research</title>
 
   <meta name="description"
-        content="Toufikul Chowdhury — Data Science graduate with research interests in statistical modelling, spatial analysis, machine learning and quantitative health research.">
+        content="Toufikul Chowdhury — Data Science graduate working with statistical, spatial and computational methods in health and population research.">
 
   <style>
 
     :root {
-      --text: #222222;
-      --secondary: #62676c;
+      --text: #202124;
+      --muted: #62676c;
       --accent: #24557a;
       --line: #e1e4e6;
       --background: #ffffff;
@@ -24,13 +24,17 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--background);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.68;
+      line-height: 1.65;
     }
 
     a {
@@ -44,162 +48,172 @@
 
     .page {
       width: calc(100% - 48px);
-      max-width: 960px;
+      max-width: 940px;
       margin: 0 auto;
-      padding: 58px 0 55px;
+      padding: 52px 0 46px;
     }
 
 
     /* =========================
-       PROFILE
+       HEADER
        ========================= */
 
-    .profile {
+    .header {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 175px;
-      gap: 55px;
+      grid-template-columns: minmax(0, 1fr) 165px;
+      gap: 48px;
       align-items: start;
-      padding-bottom: 34px;
-      border-bottom: 1px solid var(--line);
     }
 
     h1 {
-      margin: 0 0 6px;
+      margin: 0 0 4px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 40px;
       line-height: 1.15;
       font-weight: 500;
-      letter-spacing: -0.4px;
+      letter-spacing: -0.5px;
     }
 
-    .academic-line {
-      margin: 0 0 3px;
-      color: #44494d;
-      font-size: 15.5px;
-      font-weight: 500;
-    }
-
-    .education {
-      margin: 0 0 22px;
-      color: var(--secondary);
-      font-size: 13.5px;
-    }
-
-    .profile-text p {
-      max-width: 660px;
+    .degree {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .intro {
-      margin: 0 0 15px;
+      max-width: 665px;
+      margin: 0 0 14px;
+      font-size: 16px;
     }
 
-    .current-direction {
+    .direction {
+      max-width: 665px;
       margin: 0;
+      font-size: 16px;
     }
 
 
     /* =========================
-       PHOTO + CONTACT
+       PHOTO
        ========================= */
 
-    .photo {
-      width: 175px;
+    .profile-side {
+      width: 165px;
     }
 
     .portrait {
-      width: 175px;
-      height: 215px;
-      object-fit: cover;
+      width: 165px;
+      height: 205px;
       display: block;
-    }
-
-    .photo-placeholder {
-      width: 175px;
-      height: 215px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f5f5f5;
-      border: 1px solid var(--line);
-      color: #969a9e;
-      font-size: 12px;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .contact {
-      margin-top: 13px;
+      margin-top: 12px;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 1.7;
+      white-space: nowrap;
     }
 
     .contact a {
-      margin-right: 10px;
+      margin-right: 9px;
     }
 
 
     /* =========================
-       CONTENT
+       RESEARCH INTERESTS
+       ========================= */
+
+    .interests {
+      margin-top: 23px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      max-width: 665px;
+    }
+
+    .interests-title {
+      display: inline;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+
+    .interests-text {
+      display: inline;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+
+    /* =========================
+       MAIN
        ========================= */
 
     main {
-      max-width: 735px;
-      padding-top: 31px;
+      margin-top: 34px;
+      padding-top: 29px;
+      border-top: 1px solid var(--line);
+      max-width: 760px;
     }
 
     section {
-      margin-bottom: 36px;
+      margin-bottom: 34px;
     }
 
     h2 {
-      margin: 0 0 18px;
+      margin: 0 0 19px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 23px;
       line-height: 1.3;
       font-weight: 500;
     }
 
-    .research-item {
-      margin-bottom: 25px;
-    }
-
     h3 {
       margin: 0 0 2px;
-      font-size: 16.5px;
+      font-size: 16px;
       line-height: 1.45;
       font-weight: 600;
     }
 
     .meta {
       margin: 0 0 8px;
-      color: var(--secondary);
-      font-size: 13px;
+      color: var(--muted);
+      font-size: 12.5px;
     }
 
-    p {
-      margin-top: 0;
+    .research-item {
+      margin-bottom: 25px;
+    }
+
+    .research-item p:last-child {
+      margin-bottom: 0;
     }
 
 
     /* =========================
-       DOCTORAL DIRECTION
+       DOCTORAL RESEARCH
        ========================= */
 
     .doctoral {
-      padding-top: 1px;
+      margin-top: 3px;
     }
 
 
     /* =========================
-       ACADEMIC ACTIVITY
+       ACTIVITY
        ========================= */
 
     .activity {
+      padding-top: 27px;
       border-top: 1px solid var(--line);
-      padding-top: 29px;
+    }
+
+    .activity p {
+      margin-bottom: 9px;
     }
 
     .activity-link {
       display: inline-block;
-      margin-top: 0;
       font-size: 13.5px;
       font-weight: 500;
     }
@@ -210,11 +224,11 @@
        ========================= */
 
     footer {
-      max-width: 735px;
-      margin-top: 44px;
+      max-width: 760px;
+      margin-top: 40px;
       padding-top: 15px;
       border-top: 1px solid var(--line);
-      color: var(--secondary);
+      color: var(--muted);
       font-size: 12px;
     }
 
@@ -226,32 +240,33 @@
     @media (max-width: 700px) {
 
       .page {
-        width: calc(100% - 40px);
-        padding-top: 38px;
+        width: calc(100% - 38px);
+        padding: 35px 0 42px;
       }
 
-      .profile {
+      .header {
         grid-template-columns: 1fr;
-        gap: 27px;
-      }
-
-      .photo {
-        width: 160px;
-      }
-
-      .portrait,
-      .photo-placeholder {
-        width: 160px;
-        height: 195px;
+        gap: 25px;
       }
 
       h1 {
         font-size: 34px;
       }
 
-      main {
-        padding-top: 27px;
+      .profile-side {
+        width: 150px;
       }
+
+      .portrait {
+        width: 150px;
+        height: 185px;
+      }
+
+      main {
+        margin-top: 29px;
+        padding-top: 25px;
+      }
+
     }
 
   </style>
@@ -264,61 +279,65 @@
 
 
   <!-- =========================
-       PROFILE
+       INTRODUCTION
        ========================= -->
 
-  <header class="profile">
+  <header class="header">
 
-    <div class="profile-text">
+    <div>
 
       <h1>Toufikul Chowdhury</h1>
 
-      <p class="academic-line">
-        Data Science · Statistics · Spatial Analysis
-      </p>
-
-      <p class="education">
+      <p class="degree">
         MSc Data Science, University of Greenwich ·
         BSc Computer Science &amp; Engineering
       </p>
 
 
       <p class="intro">
-        My academic background spans computer science and data science, with
-        research interests in statistical modelling, spatial analysis and
-        machine learning. I am particularly interested in using quantitative
-        methods to understand how healthcare provision and population
-        inequalities vary across places and over time.
+        My academic background is in computer science and data science, and my
+        research interests lie at the intersection of statistics, spatial
+        analysis and health data. I am particularly interested in understanding
+        how healthcare provision and population inequalities vary across places
+        and over time, and in the quantitative methods used to study these
+        differences.
       </p>
 
 
-      <p class="current-direction">
-        My work has developed from analysing workforce change within the NHS
-        to investigating geographical inequalities in healthcare
-        accessibility. This has led to a broader interest in spatial and
-        spatio-temporal problems, and in the statistical methods needed to
-        study complex health and population data.
+      <p class="direction">
+        My research has developed from studying workforce change within the NHS
+        to examining geographical inequalities in healthcare accessibility.
+        Through this work, I have become increasingly interested in spatial and
+        spatio-temporal problems, statistical learning, and the analysis of
+        complex health and population data.
       </p>
+
+
+      <div class="interests">
+
+        <span class="interests-title">
+          Research interests:
+        </span>
+
+        <span class="interests-text">
+          spatial statistics · spatio-temporal modelling · statistical
+          learning · healthcare accessibility · population inequalities
+        </span>
+
+      </div>
 
     </div>
 
 
-    <aside class="photo">
+    <!-- =========================
+         PHOTO + CONTACT
+         ========================= -->
 
-      <!--
-      PHOTO WILL GO HERE.
-
-      After uploading your photograph as "portrait.jpg",
-      replace the placeholder below with:
+    <aside class="profile-side">
 
       <img class="portrait"
            src="portrait.jpg"
            alt="Toufikul Chowdhury">
-      -->
-
-      <div class="photo-placeholder">
-        Photograph
-      </div>
 
       <div class="contact">
 
@@ -345,12 +364,14 @@
   </header>
 
 
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
   <main>
 
 
-    <!-- =========================
-         RESEARCH
-         ========================= -->
+    <!-- RESEARCH -->
 
     <section>
 
@@ -369,10 +390,10 @@
 
         <p>
           My current research examines geographical inequalities in access to
-          maternity care across England. I am bringing together small-area
-          healthcare, demographic, socioeconomic and geographic data to study
-          how accessibility differs between communities and how these patterns
-          relate to wider population inequalities.
+          maternity care across England. The work integrates small-area
+          healthcare, demographic, socioeconomic and geographic data to
+          investigate how accessibility differs between communities and how
+          these patterns relate to wider population inequalities.
         </p>
 
       </article>
@@ -390,10 +411,10 @@
 
         <p>
           My MSc research examined NHS England workforce change between 2009
-          and 2023, with particular attention to midwifery and ambulance
-          services. I studied temporal, regional and organisational variation
-          in the workforce and used time-series modelling to investigate
-          longer-term trends.
+          and 2023, with a particular focus on midwifery and ambulance
+          services. The study considered temporal, regional and organisational
+          variation in workforce provision and used time-series modelling to
+          investigate longer-term workforce trends.
         </p>
 
       </article>
@@ -401,32 +422,28 @@
     </section>
 
 
-    <!-- =========================
-         PHD
-         ========================= -->
+    <!-- DOCTORAL DIRECTION -->
 
     <section class="doctoral">
 
       <h2>Doctoral research</h2>
 
       <p>
-        I am looking to pursue doctoral research in statistics, data science
-        or a closely related quantitative field. I am particularly interested
-        in spatial and spatio-temporal statistics, statistical learning, and
-        methodological work that can be connected to substantive problems in
-        health and population research.
+        I am seeking opportunities to pursue doctoral research in statistics,
+        data science or a closely related quantitative discipline. I am
+        particularly interested in spatial and spatio-temporal statistics,
+        statistical learning, and methodological research motivated by
+        substantive problems in health and population data.
       </p>
 
     </section>
 
 
-    <!-- =========================
-         ACADEMIC ACTIVITY
-         ========================= -->
+    <!-- ACTIVITY -->
 
     <section class="activity">
 
-      <h2>Academic activity</h2>
+      <h2>Activity</h2>
 
       <h3>
         CUSP London Data Dive 2025
@@ -437,9 +454,9 @@
       </p>
 
       <p>
-        Participated in an interdisciplinary urban-data challenge focused on
-        using data-driven approaches to investigate questions around
-        sustainable and greener cities.
+        Participated in an interdisciplinary urban-data challenge exploring
+        data-driven approaches to questions around sustainable and greener
+        cities.
       </p>
 
       <a class="activity-link"
@@ -453,11 +470,6 @@
 
 
   </main>
-
-
-  <footer>
-    © Toufikul Chowdhury
-  </footer>
 
 
 </div>
