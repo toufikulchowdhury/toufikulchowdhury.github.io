@@ -46,9 +46,9 @@
     body {
       margin: 0;
       font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 300;
-      line-height: 1.62;
+      line-height: 1.65;
       color: var(--text);
       background: var(--bg);
     }
@@ -62,15 +62,15 @@
       text-decoration: underline;
     }
 
-    strong,
-    b {
+    b,
+    strong {
       font-weight: 700;
     }
 
     .container {
       max-width: 930px;
       margin: 0 auto;
-      padding: 56px 20px 40px;
+      padding: 56px 20px 60px;
     }
 
 
@@ -78,21 +78,21 @@
 
     .about {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 240px;
+      grid-template-columns: minmax(0, 1fr) 290px;
       gap: 38px;
       align-items: start;
     }
 
     h1.title {
-      margin: 0 0 21px;
-      font-size: 40px;
+      margin: 0 0 22px;
+      font-size: 44px;
       font-weight: 300;
       line-height: 1.15;
       letter-spacing: -.4px;
     }
 
     .about p {
-      margin: 0 0 15px;
+      margin: 0 0 16px;
     }
 
     .profile img {
@@ -105,39 +105,22 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
     }
 
-    .more-info {
-      margin-top: 14px;
+    /* contact block under the photo, in the style of al-folio */
+    .contact {
+      margin-top: 16px;
+      text-align: center;
       font-family: "Roboto Mono", monospace;
-      font-size: 12px;
-      line-height: 2;
-    }
-
-    .more-info a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 15.5px;
+      line-height: 1.7;
       color: var(--text);
-      white-space: nowrap;
-    }
-
-    .more-info a:hover {
-      color: var(--theme);
-      text-decoration: none;
-    }
-
-    .more-info svg {
-      width: 15px;
-      height: 15px;
-      flex: none;
-      color: var(--theme);
     }
 
 
     /* ---------- sections ---------- */
 
     h2 {
-      margin: 44px 0 12px;
-      font-size: 28px;
+      margin: 48px 0 16px;
+      font-size: 32px;
       font-weight: 300;
       line-height: 1.25;
     }
@@ -150,79 +133,85 @@
 
     .items li {
       display: grid;
-      grid-template-columns: 124px minmax(0, 1fr);
-      gap: 26px;
-      padding: 16px 0;
-      border-top: 1px solid var(--line);
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 40px;
+      padding: 14px 0 22px;
     }
 
-    .items li:first-child {
-      border-top: 0;
-    }
-
-    .badge {
+    /* coloured topic tags */
+    .tag {
       align-self: start;
-      padding-top: 1px;
-      color: var(--theme);
+      margin-top: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-align: center;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 700;
+      color: #111111;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .18);
     }
+
+    .tag.gold    { background: #e8ae3e; }
+    .tag.teal    { background: #3fa9c9; }
+    .tag.magenta { background: #d23ee6; }
 
     .item-title {
-      font-weight: 700;
+      font-weight: 400;
+    }
+
+    .item-authors {
+      margin-top: 2px;
+    }
+
+    .item-authors .me {
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .item-meta {
-      margin-top: 2px;
-      color: var(--muted);
       font-style: italic;
     }
 
     .item-text {
-      margin: 7px 0 0;
-      font-size: 15px;
+      margin: 8px 0 0;
+      font-size: 15.5px;
       line-height: 1.6;
+      color: var(--muted);
     }
 
-    table.education {
+
+    /* ---------- news-style tables ---------- */
+
+    table.news {
       width: 100%;
       border-collapse: collapse;
     }
 
-    table.education th {
-      width: 150px;
-      padding: 8px 20px 8px 6px;
+    table.news th {
+      width: 170px;
+      padding: 8px 30px 12px 6px;
       text-align: left;
       vertical-align: top;
-      font-weight: 500;
+      font-weight: 700;
       white-space: nowrap;
     }
 
-    table.education td {
-      padding: 8px 6px;
+    table.news td {
+      padding: 8px 6px 12px;
       vertical-align: top;
-    }
-
-    footer {
-      max-width: 930px;
-      margin: 0 auto;
-      padding: 18px 20px 40px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--line);
     }
 
 
     /* ---------- mobile ---------- */
 
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
 
       .container {
         padding-top: 34px;
       }
 
       h1.title {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .about {
@@ -232,20 +221,21 @@
 
       .profile {
         order: -1;
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
       }
 
       .items li {
         grid-template-columns: 1fr;
-        gap: 7px;
+        gap: 8px;
       }
 
-      .badge {
+      .tag {
         justify-self: start;
+        min-width: 150px;
       }
 
-      table.education th {
+      table.news th {
         width: auto;
         padding-right: 14px;
       }
@@ -271,7 +261,7 @@
           Md <b>Toufikul</b> Islam Chowdhury
         </h1>
 
-          <p>
+        <p>
           I hold an MSc in Data Science from the University of Greenwich (2025), where
           my dissertation analysed the midwifery and ambulance workforce across England.
           It found that national growth masks regional imbalance: staff concentrate in
@@ -293,24 +283,11 @@
 
         <img src="./portrait.jpg" alt="Md Toufikul Islam Chowdhury">
 
-        <div class="more-info">
-
-          <a href="mailto:toufikul.chowdhury@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="m3 7 9 6 9-6"/>
-            </svg>
-            toufikul.chowdhury@gmail.com
-          </a>
-
-          <a href="https://www.linkedin.com/in/toufikulchowdhury/" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
-            </svg>
-            LinkedIn
-          </a>
-
+        <div class="contact">
+          toufikul.chowdhury@gmail.com<br>
+          [<a href="https://www.linkedin.com/in/toufikulchowdhury/" target="_blank" rel="noopener noreferrer">LinkedIn</a>]
+          [<a href="./Chowdhury_CV.pdf" target="_blank" rel="noopener noreferrer">CV (Sep 2026)</a>]<br>
+          London, United Kingdom
         </div>
 
       </div>
@@ -327,32 +304,37 @@
       <ul class="items">
 
         <li>
-          <div class="badge">Manuscript</div>
+          <div class="tag gold">Spatial Health</div>
           <div>
             <div class="item-title">
               Quality-adjusted spatial accessibility to maternity care in England:
               A provider-determined measure and the limits of neighbourhood-scale inference
             </div>
-
+            <div class="item-authors">
+              <span class="me">Md Toufikul Islam Chowdhury</span> and Jia Wang
+            </div>
+            <div class="item-meta">Manuscript in preparation</div>
             <p class="item-text">
               A measure of spatial accessibility to maternity care that accounts for
               the rated quality of providers, estimated for 33,744 neighbourhoods and
               aggregated to 106 commissioners and 42 health systems, using road-network
               travel times, regulator ratings and administrative birth records.
-              With Dr Jia Wang.
             </p>
           </div>
         </li>
 
         <li>
-          <div class="badge">MSc dissertation</div>
+          <div class="tag teal">Health Workforce</div>
           <div>
             <div class="item-title">
               Spatiotemporal workforce dynamics and forecasting in NHS England:
               Spotlight on midwives and ambulance staff
             </div>
+            <div class="item-authors">
+              <span class="me">Md Toufikul Islam Chowdhury</span>
+            </div>
             <div class="item-meta">
-              University of Greenwich, 2024 · Supervisor: Dr Jia Wang · Mark: 80%
+              MSc dissertation, University of Greenwich, 2024 · Supervisor: Dr Jia Wang · Mark: 80%
             </div>
             <p class="item-text">
               An analysis of NHS England workforce statistics for midwives and
@@ -376,31 +358,22 @@
 
       <h2>Competition</h2>
 
-      <ul class="items">
-
-        <li>
-          <div class="badge">Team challenge</div>
-          <div>
-            <div class="item-title">
-              <a href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition"
-                 target="_blank" rel="noopener noreferrer">CUSP London Data Dive 2025</a>,
-              King's College London
-            </div>
-            <div class="item-meta">
-              February 2025 · 80+ students from eight universities
-            </div>
-            <p class="item-text">
-              A team entry on urban waste management and city sustainability targets
-              for 2030 and 2050. We linked recycling rates, fly-tipping, deprivation,
-              council tax and housing type for the 33 London boroughs; I produced the
-              interactive borough map in Python. Recycling rates were lower in more
-              deprived boroughs (Spearman ρ = −0.63) and in boroughs with more
-              purpose-built flats (ρ = −0.64).
-            </p>
-          </div>
-        </li>
-
-      </ul>
+      <table class="news">
+        <tr>
+          <th>Feb 2025</th>
+          <td>
+            Took part in the
+            <a href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition"
+               target="_blank" rel="noopener noreferrer">CUSP London Data Dive 2025</a>
+            at King's College London, a team challenge on urban waste management with
+            80+ students from eight universities. We linked recycling, fly-tipping,
+            deprivation, council tax and housing data for the 33 London boroughs, and I
+            produced the interactive borough map in Python. Recycling rates were lower in
+            more deprived boroughs (Spearman ρ = −0.63) and in boroughs with more
+            purpose-built flats (ρ = −0.64).
+          </td>
+        </tr>
+      </table>
 
     </section>
 
@@ -411,18 +384,18 @@
 
       <h2>Education</h2>
 
-      <table class="education">
+      <table class="news">
         <tr>
-          <th>MSc, 2025</th>
+          <th>2025</th>
           <td>
-            <b>Data Science</b>, University of Greenwich, London, with Merit
+            <b>MSc Data Science</b>, University of Greenwich, London, with Merit
             (dissertation mark: 80%)
           </td>
         </tr>
         <tr>
-          <th>BSc, 2022</th>
+          <th>2022</th>
           <td>
-            <b>Computer Science and Engineering</b>, Leading University, Bangladesh
+            <b>BSc Computer Science and Engineering</b>, Leading University, Bangladesh
           </td>
         </tr>
       </table>
