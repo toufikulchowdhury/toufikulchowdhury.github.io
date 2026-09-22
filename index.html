@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Md Toufikul Islam Chowdhury: health-data research on access to maternity and emergency care in England, using spatial statistics, statistical modelling and machine learning."
+    content="Md Toufikul Islam Chowdhury: health-data research on access to maternity care and the NHS workforce in England, using spatial statistics, statistical modelling and machine learning."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,7 @@
       --muted: #5c5c5c;
       --bg: #ffffff;
       --line: #dee2e6;
+      --accent: #6f42c1;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -36,6 +37,7 @@
         --muted: #aaaaaa;
         --bg: #1c1c1d;
         --line: #3a3a3c;
+        --accent: #c29ffa;
       }
     }
 
@@ -62,6 +64,28 @@
       text-decoration: underline;
     }
 
+    /* highlighted link, for the one link a reader should follow */
+    a.accent {
+      color: var(--accent);
+      font-weight: 400;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a.accent:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* justified body text; hyphenation stops wide gaps between words */
+    .about p,
+    .item-text,
+    table.news td {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
     b,
     strong {
       font-weight: 700;
@@ -78,7 +102,7 @@
 
     .about {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 290px;
+      grid-template-columns: minmax(0, 1fr) 250px;
       gap: 38px;
       align-items: start;
     }
@@ -100,7 +124,7 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: top;
+      object-position: 50% 20%;
       border-radius: 4px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
     }
@@ -110,7 +134,7 @@
       margin-top: 16px;
       text-align: center;
       font-family: "Roboto Mono", monospace;
-      font-size: 15.5px;
+      font-size: 14px;
       line-height: 1.7;
       color: var(--text);
     }
@@ -221,7 +245,8 @@
 
       .profile {
         order: -1;
-        width: 75%;
+        width: 60%;
+        max-width: 250px;
         margin: 0 auto;
       }
 
@@ -238,6 +263,13 @@
       table.news th {
         width: auto;
         padding-right: 14px;
+      }
+
+      /* narrow screens: justification leaves gaps, so align left */
+      .about p,
+      .item-text,
+      table.news td {
+        text-align: left;
       }
 
     }
@@ -263,10 +295,10 @@
 
         <p>
           I hold an MSc in Data Science from the University of Greenwich (2025), where
-          my dissertation analysed the midwifery and ambulance workforce across England.
-          It found that national growth masks regional imbalance: staff concentrate in
-          urban systems such as London, while rural areas including Devon and Cornwall
-          remain thinly covered.
+          my dissertation analysed NHS England workforce statistics for midwives and
+          ambulance staff from 2009 to 2023 and forecast regional trends with SARIMAX
+          models. It found that the mix of staff groups differs markedly between regions:
+          in 2023 managers outnumbered ambulance staff both nationally and in London.
         </p>
 
         <p>
@@ -316,9 +348,10 @@
             <div class="item-meta">Manuscript in preparation</div>
             <p class="item-text">
               A measure of spatial accessibility to maternity care that accounts for
-              the rated quality of providers, estimated for 33,744 neighbourhoods and
-              aggregated to 106 commissioners and 42 health systems, using road-network
-              travel times, regulator ratings and administrative birth records.
+              the rated quality of providers, estimated for 33,744 neighbourhoods using
+              road-network travel times, regulator ratings and birth registrations, and
+              analysed alongside maternity records for 106 commissioners and midwifery
+              staffing for 42 health systems.
             </p>
           </div>
         </li>
@@ -334,7 +367,7 @@
               <span class="me">Md Toufikul Islam Chowdhury</span>
             </div>
             <div class="item-meta">
-              MSc dissertation, University of Greenwich, 2024 · Supervisor: Dr Jia Wang · Mark: 80%
+              MSc dissertation, University of Greenwich, 2024–25 · Supervisor: Dr Jia Wang · Mark: 80%
             </div>
             <p class="item-text">
               An analysis of NHS England workforce statistics for midwives and
@@ -363,14 +396,14 @@
           <th>Feb 2025</th>
           <td>
             Took part in the
-            <a href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition"
+            <a class="accent" href="https://www.kcl.ac.uk/news/students-from-around-the-world-develop-solutions-for-greener-cities-in-data-competition"
                target="_blank" rel="noopener noreferrer">CUSP London Data Dive 2025</a>
             at King's College London, a team challenge on urban waste management with
             80+ students from eight universities. We linked recycling, fly-tipping,
-            deprivation, council tax and housing data for the 33 London boroughs, and I
+            deprivation, council tax and housing data for London's 32 boroughs and the City of London, and I
             produced the interactive borough map in Python. Recycling rates were lower in
-            more deprived boroughs (Spearman ρ = −0.63) and in boroughs with more
-            purpose-built flats (ρ = −0.64).
+            more deprived boroughs (Spearman&nbsp;ρ&nbsp;=&nbsp;−0.63) and in boroughs with more
+            purpose-built flats (ρ&nbsp;=&nbsp;−0.64).
           </td>
         </tr>
       </table>
